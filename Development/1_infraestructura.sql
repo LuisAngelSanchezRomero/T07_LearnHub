@@ -9,14 +9,9 @@ CREATE ROLE ROL_DEV;
 GRANT CONNECT, RESOURCE, CREATE SESSION, CREATE TABLE, CREATE SEQUENCE, CREATE VIEW TO ROL_DEV;
 
 -- 3. Creación de los TRES usuarios del proyecto
--- Lucas1 (Desarrollador 1)
-CREATE USER Lucas1 IDENTIFIED BY Lucas1_password;
-
--- Karla2 (Desarrollador 2)
-CREATE USER Karla2 IDENTIFIED BY Karla2_password;
-
--- Luis3 (Desarrollador 3 - Anteriormente Andre3)
-CREATE USER Luis3 IDENTIFIED BY Luis3_password;
+CREATE USER Lucas1 IDENTIFIED BY "Dev1#Contra2025";
+CREATE USER Karla2 IDENTIFIED BY "Dev2#Contra2025";
+CREATE USER Luis3 IDENTIFIED BY "Dev3#Contra2025";
 
 -- 4. Asignación del ROL_DEV a los usuarios
 GRANT ROL_DEV TO Lucas1;
@@ -27,3 +22,8 @@ GRANT ROL_DEV TO Luis3;
 GRANT CREATE SYNONYM TO Lucas1;
 GRANT CREATE SYNONYM TO Karla2;
 GRANT CREATE SYNONYM TO Luis3;
+
+-- 6. Para borrar los usuarios
+DROP USER Lucas1 CASCADE;
+DROP USER Karla2 CASCADE;
+DROP USER Luis3 CASCADE;
