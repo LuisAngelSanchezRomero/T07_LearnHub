@@ -1,13 +1,9 @@
 -- Constraints de Lucas1
 
--- Relación enrollment (Karla2) → student (Lucas1)
+-- Lucas1 otorga permisos a Karla2 y Luis3 para usar sus tablas en FKs
 
-ALTER TABLE Karla2.enrollment
-ADD CONSTRAINT fk_enrollment_student FOREIGN KEY (student_code)
-REFERENCES Lucas1.student(student_code);
+GRANT SELECT, REFERENCES ON student TO Karla2;
+GRANT SELECT, REFERENCES ON course TO Karla2;
 
--- Relación enrollment (Karla2) → course (Lucas1)
-
-ALTER TABLE Karla2.enrollment
-ADD CONSTRAINT fk_enrollment_course FOREIGN KEY (course_code)
-REFERENCES Lucas1.course(course_code);
+GRANT SELECT, REFERENCES ON student TO Luis3;
+GRANT SELECT, REFERENCES ON course TO Luis3;
